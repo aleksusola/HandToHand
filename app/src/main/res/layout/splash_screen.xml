@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/frameLayout1"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearAnim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_record_voice_over_black" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="HAND TO HAND"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="false"
+            android:textSize="50sp"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+
+</FrameLayout>

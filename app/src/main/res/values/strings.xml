@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HandToHand</string>
+    <string name="login_success_message">Добро пожаловать!</string>
+    <string name="login_text">Войти</string>
+    <string name="logout_text">Выйти</string>
+                                    
+    <string name="facebook_button_text">Facebook</string>
+                                    
+    <string name="register_text">Регистрация</string>
+    <string name="restore_link">Забыли пароль?</string>
+    <string name="password_recovered_message">На вашу почту пришло письмо с новым паролем. Следуйте инструкциям и не теряйте свой пароль.</string>
+    <string name="restore_password_page_name">Восстановление пароля</string>
+    <string name="registration_page_name">Регистрация</string>
+    <string name="login_prompt">Логин:</string>
+    <string name="password_prompt">Пароль:</string>
+    <string name="password_recovery_page_name">Восстановление пароля</string>
+    <string name="warning_icon_description">Внимание</string>
+    <string name="remember_login_text">Запомнить меня</string>
+                                        
+    <string name="created_field_prompt">Created:</string>
+                                        
+    <string name="password_field_prompt">Пароль:</string>
+                                        
+    <string name="name_field_prompt">Логин:</string>
+                                        
+    <string name="ownerId_field_prompt">OwnerId:</string>
+                                        
+    <string name="objectId_field_prompt">ObjectId:</string>
+                                        
+    <string name="updated_field_prompt">Updated:</string>
+                                        
+    <string name="email_field_prompt">Email:</string>
+                                        
+    <string name="default_registered_text">Вы успешно зарегестрированы!</string>
+                                        
+    <string name="registration_success_message">Спасибо за регистрацию на %1$s. Нажмите кнопку, чтобы войти.</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_about">О программе</string>
+    <string name="action_exit">Выйти</string>
+
+</resources>
