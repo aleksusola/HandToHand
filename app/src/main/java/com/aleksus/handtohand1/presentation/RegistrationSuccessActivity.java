@@ -1,5 +1,5 @@
 
-package com.aleksus.handtohand1;
+package com.aleksus.handtohand1.presentation;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.aleksus.handtohand1.R;
 
 public class RegistrationSuccessActivity extends Activity
 {
@@ -18,7 +20,7 @@ public class RegistrationSuccessActivity extends Activity
   public void onCreate( Bundle savedInstanceState )
   {
     super.onCreate( savedInstanceState );
-    setContentView(R.layout.registration_success);
+    setContentView(R.layout.activity_registration_success);
 
     initUI();
   }
@@ -27,7 +29,7 @@ public class RegistrationSuccessActivity extends Activity
   {
     messageView = (TextView) findViewById( R.id.messageView );
     loginButton = (Button) findViewById( R.id.loginButton );
-                                                    
+
 
     Resources resources = getResources();
     String message = String.format( resources.getString( R.string.registration_success_message ), resources.getString( R.string.app_name ) );
@@ -49,4 +51,3 @@ public class RegistrationSuccessActivity extends Activity
     finish();
   }
 }
-                

@@ -1,4 +1,4 @@
-package com.aleksus.handtohand1;
+package com.aleksus.handtohand1.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.aleksus.handtohand1.DefaultCallback;
+import com.aleksus.handtohand1.Defaults;
+import com.aleksus.handtohand1.R;
+import com.aleksus.handtohand1.SocialCallback;
 import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 
@@ -29,18 +33,15 @@ public class LoginActivity extends AppCompatActivity
     private Button facebookButton;
 
     @Override
-    public void onCreate( Bundle savedInstanceState )
-    {
+    public void onCreate( Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.login );
+        setContentView( R.layout.activity_login);
 
         initUI();
 
         Backendless.setUrl( Defaults.SERVER_URL );
-        Backendless.initApp( this, Defaults.APPLICATION_ID, Defaults.API_KEY );
-
-        Backendless.UserService.isValidLogin( new DefaultCallback<Boolean>( this )
-        {
+        Backendless.initApp( getApplicationContext(), Defaults.APPLICATION_ID, Defaults.API_KEY );
+        Backendless.UserService.isValidLogin( new DefaultCallback<Boolean>( this ) {
             @Override
             public void handleResponse( Boolean isValidLogin )
             {
@@ -180,7 +181,7 @@ public class LoginActivity extends AppCompatActivity
 //                String password = passwordField.getText().toString();
 //                boolean rememberLogin = rememberLoginBox.isChecked();
 //
-//                Backendless.UserService.login( identity, password, new DefaultCallback<BackendlessUser>( LoginActivity.this )
+//                Backendless.UserService.activity_login( identity, password, new DefaultCallback<BackendlessUser>( LoginActivity.this )
 //                {
 //                    public void handleResponse( BackendlessUser backendlessUser )
 //                    {

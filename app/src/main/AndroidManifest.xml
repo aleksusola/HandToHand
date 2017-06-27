@@ -13,25 +13,27 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:name=".presentation.SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name">
+            android:name=".presentation.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".PasswordRecovery" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".RegistrationSuccessActivity" />
-        <activity android:name=".RestorePasswordActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".AboutActivity" />
+        <activity android:name=".presentation.SearchActivity" />
+        <activity android:name=".presentation.PasswordRecoveryActivity" />
+        <activity android:name=".presentation.RegisterActivity" />
+        <activity android:name=".presentation.RegistrationSuccessActivity" />
+        <activity android:name=".presentation.RestorePasswordActivity" />
+        <activity android:name=".presentation.ProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.SettingsActivity" />
+        <activity android:name=".presentation.AboutActivity" />
 
     </application>
 

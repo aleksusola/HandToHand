@@ -1,4 +1,4 @@
-package com.aleksus.handtohand1;
+package com.aleksus.handtohand1.presentation;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,13 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.aleksus.handtohand1.R;
+
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btn_mail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about);
+        setContentView(R.layout.activity_about);
 
         btn_mail= (Button) findViewById(R.id.btn_mail);
         btn_mail.setOnClickListener(this);

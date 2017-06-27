@@ -1,5 +1,5 @@
 
-package com.aleksus.handtohand1;
+package com.aleksus.handtohand1.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class PasswordRecovery extends AppCompatActivity
+import com.aleksus.handtohand1.R;
+
+public class PasswordRecoveryActivity extends AppCompatActivity
 {
   private Button loginButton;
 
@@ -15,7 +17,7 @@ public class PasswordRecovery extends AppCompatActivity
   public void onCreate( Bundle savedInstanceState )
   {
     super.onCreate( savedInstanceState );
-    setContentView( R.layout.password_recovery_requested );
+    setContentView( R.layout.activity_password_recovery_requested);
 
     initUI();
   }

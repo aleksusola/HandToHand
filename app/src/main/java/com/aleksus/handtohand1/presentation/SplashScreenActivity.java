@@ -1,4 +1,4 @@
-package com.aleksus.handtohand1;
+package com.aleksus.handtohand1.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
-public class SplashScreen extends AppCompatActivity implements View.OnClickListener{
+import com.aleksus.handtohand1.R;
+
+public class SplashScreenActivity extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.activity_splash_screen);
 
         LinearLayout linearAnim = (LinearLayout) findViewById(R.id.linearAnim);
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.combo);

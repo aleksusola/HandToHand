@@ -1,4 +1,4 @@
-package com.aleksus.handtohand1;
+package com.aleksus.handtohand1.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aleksus.handtohand1.DefaultCallback;
+import com.aleksus.handtohand1.R;
 import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.backendless.exceptions.BackendlessFault;
@@ -22,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onCreate( Bundle savedInstanceState )
     {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.profile);
+        setContentView( R.layout.activity_profile);
         BackendlessUser user = Backendless.UserService.CurrentUser();
         if( user != null )
         {
