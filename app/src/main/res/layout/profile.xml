@@ -18,10 +18,12 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login_success_message"
-            android:textSize="@dimen/text_medium"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            android:text="@string/login_success_message"
+            android:textSize="@dimen/text_medium" />
 
         <TextView
             android:id="@+id/textView2"

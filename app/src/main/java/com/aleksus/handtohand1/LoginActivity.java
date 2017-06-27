@@ -21,8 +21,9 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity
 {
-    private TextView registerLink, restoreLink;
+    private TextView restoreLink;
     private EditText identityField, passwordField;
+    Button registerButton;
     Button loginButton;
     private CheckBox rememberLoginBox;
     private Button facebookButton;
@@ -70,7 +71,7 @@ public class LoginActivity extends AppCompatActivity
 
     private void initUI()
     {
-        registerLink = (TextView) findViewById( R.id.registerLink );
+        registerButton = (Button) findViewById( R.id.registerButton );
         restoreLink = (TextView) findViewById( R.id.restoreLink );
         identityField = (EditText) findViewById( R.id.identityField );
         passwordField = (EditText) findViewById( R.id.passwordField );
@@ -81,7 +82,7 @@ public class LoginActivity extends AppCompatActivity
         String tempString = getResources().getString( R.string.register_text );
         SpannableString underlinedContent = new SpannableString( tempString );
         underlinedContent.setSpan( new UnderlineSpan(), 0, tempString.length(), 0 );
-        registerLink.setText( underlinedContent );
+        registerButton.setText( underlinedContent );
         tempString = getResources().getString( R.string.restore_link );
         underlinedContent = new SpannableString( tempString );
         underlinedContent.setSpan( new UnderlineSpan(), 0, tempString.length(), 0 );
@@ -96,12 +97,12 @@ public class LoginActivity extends AppCompatActivity
             }
         } );
 
-        registerLink.setOnClickListener( new View.OnClickListener()
+        registerButton.setOnClickListener( new View.OnClickListener()
         {
             @Override
             public void onClick( View view )
             {
-                onRegisterLinkClicked();
+                onRegisterButtonClicked();
             }
         } );
 
@@ -140,7 +141,7 @@ public class LoginActivity extends AppCompatActivity
         }, rememberLogin );
     }
 
-    public void onRegisterLinkClicked()
+    public void onRegisterButtonClicked()
     {
         startActivity( new Intent( this, RegisterActivity.class ) );
     }
@@ -170,4 +171,51 @@ public class LoginActivity extends AppCompatActivity
             }
         } );
     }
+
+//    @Override
+//    public void onClick(View view) {
+//        switch (view.getId()){
+//            case R.id.loginButton:
+//                String identity = identityField.getText().toString();
+//                String password = passwordField.getText().toString();
+//                boolean rememberLogin = rememberLoginBox.isChecked();
+//
+//                Backendless.UserService.login( identity, password, new DefaultCallback<BackendlessUser>( LoginActivity.this )
+//                {
+//                    public void handleResponse( BackendlessUser backendlessUser )
+//                    {
+//                        super.handleResponse( backendlessUser );
+//                        startActivity( new Intent( LoginActivity.this, ProfileActivity.class ) );
+//                    }
+//                }, rememberLogin );
+//                break;
+//            case R.id.registerButton:
+//                startActivity( new Intent( this, RegisterActivity.class ) );
+//                break;
+//            case R.id.restoreLink:
+//                startActivity( new Intent( this, RestorePasswordActivity.class ) );
+//                break;
+//            case R.id.loginFacebookButton:
+//                Map<String, String> facebookFieldsMapping = new HashMap<>();
+//                facebookFieldsMapping.put( "name", "name" );
+//                facebookFieldsMapping.put( "gender", "gender" );
+//                facebookFieldsMapping.put( "email", "email" );
+//
+//                List<String> facebookPermissions = new ArrayList<>();
+//                facebookPermissions.add( "email" );
+//
+//                Backendless.UserService.loginWithFacebook( LoginActivity.this, null, facebookFieldsMapping, facebookPermissions, new SocialCallback<BackendlessUser>( LoginActivity.this )
+//                {
+//                    @Override
+//                    public void handleResponse( BackendlessUser backendlessUser )
+//                    {
+//                        startActivity( new Intent( getBaseContext(), ProfileActivity.class ) );
+//                        finish();
+//                    }
+//                } );
+//                break;
+//            default:
+//                break;
+//        }
+//    }
 }

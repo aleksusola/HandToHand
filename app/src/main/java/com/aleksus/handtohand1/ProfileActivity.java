@@ -7,9 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.backendless.Backendless;
+import com.backendless.BackendlessUser;
 import com.backendless.exceptions.BackendlessFault;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
@@ -21,9 +23,25 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.profile);
-
-//        TextView textView = (TextView) findViewById(R.id.textView);
-//        textView.setText("Добро пожаловать в " + name);
+        BackendlessUser user = Backendless.UserService.CurrentUser();
+        if( user != null )
+        {
+            String name = (String) user.getProperty( "name" );
+            TextView textView = (TextView) findViewById(R.id.textView1);
+            textView.setText("Добро пожаловать, " + name);
+            String email = (String) user.getProperty( "email" );
+            TextView textView1 = (TextView) findViewById(R.id.textView3);
+            textView1.setText("Электронная почта: " + email);
+            Double phone = (Double) user.getProperty( "phone" );
+            TextView textView2 = (TextView) findViewById(R.id.textView4);
+            textView2.setText("Телефон: +" + phone);
+        }
+        else
+        {
+            Toast.makeText( ProfileActivity.this,
+                    "User hasn't been logged",
+                    Toast.LENGTH_SHORT ).show();
+        }
     }
 
     @Override
