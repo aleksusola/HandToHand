@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.aleksus.handtohand1.R;
 
-public class SearchActivity extends AppCompatActivity implements View.OnClickListener{
+public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

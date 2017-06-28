@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.aleksus.handtohand1.R;
 
-public class AboutActivity extends AppCompatActivity implements View.OnClickListener{
+public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_mail;
     @Override

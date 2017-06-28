@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 import com.aleksus.handtohand1.R;
 
-public class SplashScreenActivity extends AppCompatActivity implements View.OnClickListener{
+public class SplashScreenActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

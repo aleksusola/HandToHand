@@ -16,18 +16,16 @@ import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.backendless.exceptions.BackendlessFault;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_search;
 
     @Override
-    public void onCreate( Bundle savedInstanceState )
-    {
+    public void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_profile);
         BackendlessUser user = Backendless.UserService.CurrentUser();
-        if( user != null )
-        {
+        if( user != null ) {
             String name = (String) user.getProperty( "name" );
             TextView textView = (TextView) findViewById(R.id.textView1);
             textView.setText("Добро пожаловать, " + name);
@@ -38,8 +36,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             TextView textView2 = (TextView) findViewById(R.id.textView4);
             textView2.setText("Телефон: +" + phone);
         }
-        else
-        {
+        else {
             Toast.makeText( ProfileActivity.this,
                     "User hasn't been logged",
                     Toast.LENGTH_SHORT ).show();
@@ -68,19 +65,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent1);
                 break;
             case R.id.action_exit:
-                Backendless.UserService.logout( new DefaultCallback<Void>( this )
-                {
+                Backendless.UserService.logout( new DefaultCallback<Void>( this ) {
                     @Override
-                    public void handleResponse( Void response )
-                    {
+                    public void handleResponse( Void response ) {
                         super.handleResponse( response );
                         startActivity( new Intent( ProfileActivity.this, LoginActivity.class ) );
                         finish();
                     }
 
                     @Override
-                    public void handleFault( BackendlessFault fault )
-                    {
+                    public void handleFault( BackendlessFault fault ) {
                         if( fault.getCode().equals( "3023" ) ) // Unable to logout: not logged in (session expired, etc.)
                             handleResponse( null );
                         else

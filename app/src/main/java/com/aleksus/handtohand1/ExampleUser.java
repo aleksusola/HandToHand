@@ -3,8 +3,7 @@ package com.aleksus.handtohand1;
 
 import com.backendless.BackendlessUser;
 
-public class ExampleUser extends BackendlessUser
-{
+public class ExampleUser extends BackendlessUser {
   public String getEmail() { return super.getEmail();  }
 
   public void setEmail( String email )
@@ -27,10 +26,7 @@ public class ExampleUser extends BackendlessUser
     super.setProperty( "created", created );
   }
 
-  public String getName()
-  {
-    return (String) super.getProperty( "name" );
-  }
+  public String getName() { return (String) super.getProperty( "name" ); }
 
   public void setName( String name )
   {
