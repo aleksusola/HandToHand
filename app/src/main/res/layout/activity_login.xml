@@ -4,47 +4,32 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/dp16"
-    android:paddingRight="@dimen/dp16">
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/dp48"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/dp4">
+    android:padding="@dimen/dp16">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/dp4"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dp4"
             android:text="@string/login_text"
             android:textSize="@dimen/text_large" />
-    </LinearLayout>
-                                    
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp4"
-        android:layout_marginTop="@dimen/dp4">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/dp4"
-            android:gravity="left">
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginRight="@dimen/dp4"
-                android:gravity="right|center_vertical"
+                android:gravity="center_vertical"
                 android:text="@string/login_prompt"
                 android:textSize="@dimen/text_medium" />
 
             <EditText
                 android:id="@+id/identityField"
-                android:layout_width="@dimen/dp192"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginLeft="@dimen/dp4"
                 android:layout_marginRight="@dimen/dp4"
@@ -52,31 +37,24 @@
                 android:inputType="text"
                 android:textSize="@dimen/text_medium" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp48"
-                android:layout_marginLeft="@dimen/dp4" />
-
         </TableRow>
 
         <TableRow
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp4"
-            android:layout_marginTop="@dimen/dp4"
-            android:gravity="left">
+            android:gravity="center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginRight="@dimen/dp4"
-                android:gravity="center_vertical|right"
+                android:gravity="center_vertical"
                 android:text="@string/password_prompt"
                 android:textSize="@dimen/text_medium"/>
 
             <EditText
                 android:id="@+id/passwordField"
-                android:layout_width="@dimen/dp192"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginLeft="@dimen/dp4"
                 android:layout_marginRight="@dimen/dp4"
@@ -86,7 +64,7 @@
 
         </TableRow>
 
-    </TableLayout>
+
 
     <TextView
         android:id="@+id/restoreLink"
@@ -108,10 +86,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp48"
-        android:layout_marginBottom="@dimen/dp4"
-        android:layout_marginTop="@dimen/dp16"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_margin="@dimen/dp4"
+        android:gravity="center_horizontal">
 
         <Button
             android:id="@+id/registerButton"

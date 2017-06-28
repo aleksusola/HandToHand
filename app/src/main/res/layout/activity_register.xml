@@ -3,29 +3,20 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/dp16"
-            android:paddingRight="@dimen/dp16">
+            android:padding="@dimen/dp16">
 
     <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="@dimen/dp48"
-                android:gravity="center"
-                android:layout_marginBottom="@dimen/dp4">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_large"
-                    android:layout_marginLeft="@dimen/dp4"
-                    android:text="@string/registration_page_name"/>
-
-        </LinearLayout>
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp40"
+                android:layout_margin="@dimen/dp4"
+                android:text="@string/registration_page_name"
+                android:textSize="@dimen/text_large" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -36,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginRight="@dimen/dp4"
-                android:gravity="center_vertical|right"
+                android:gravity="center_vertical"
                 android:paddingRight="@dimen/dp4"
                 android:text="@string/name_field_prompt"
                 android:textSize="@dimen/text_medium" />
@@ -44,12 +35,11 @@
             <EditText
 
                 android:id="@+id/nameField"
-                android:layout_width="@dimen/dp144"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginLeft="@dimen/dp4"
                 android:gravity="center_vertical"
                 android:inputType="text"
-
                 android:textSize="@dimen/text_medium" />
 
         </TableRow>
@@ -60,11 +50,10 @@
             android:gravity="center_horizontal">
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginRight="@dimen/dp4"
-                android:gravity="center_vertical|right"
+                android:gravity="center_vertical"
                 android:paddingRight="@dimen/dp4"
                 android:text="@string/email_field_prompt"
                 android:textSize="@dimen/text_medium" />
@@ -72,12 +61,11 @@
             <EditText
 
                 android:id="@+id/emailField"
-                android:layout_width="@dimen/dp144"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginLeft="@dimen/dp4"
                 android:gravity="center_vertical"
-                android:inputType="text"
-
+                android:inputType="textEmailAddress"
                 android:textSize="@dimen/text_medium" />
 
         </TableRow>
@@ -91,154 +79,54 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginRight="@dimen/dp4"
-                android:gravity="center_vertical|right"
+                android:gravity="center_vertical"
                 android:paddingRight="@dimen/dp4"
                 android:text="@string/password_field_prompt"
                 android:textSize="@dimen/text_medium" />
 
             <EditText
-
                 android:id="@+id/passwordField"
-                android:layout_width="@dimen/dp144"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/dp48"
                 android:layout_marginLeft="@dimen/dp4"
                 android:gravity="center_vertical"
-                android:inputType="text"
-
-                android:password="true"
-
+                android:inputType="textPassword"
                 android:textSize="@dimen/text_medium" />
 
         </TableRow>
 
-        <!--<TableLayout-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="@dimen/dp4"-->
-                <!--android:layout_marginBottom="@dimen/dp4">-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
 
-            <!--<TableRow-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="@dimen/dp48"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:visibility="invisible">-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp48"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dp4"
+                android:text="@string/phone_field_prompt"
+                android:textSize="@dimen/text_medium" />
 
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginRight="@dimen/dp4"-->
-                    <!--android:gravity="center_vertical|right"-->
-                    <!--android:paddingRight="@dimen/dp4"-->
-                    <!--android:text="@string/created_field_prompt"-->
-                    <!--android:textSize="@dimen/text_medium" />-->
+            <EditText
 
-                <!--<EditText-->
+                android:id="@+id/phoneField"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp48"
+                android:gravity="center_vertical"
+                android:inputType="phone"
+                android:textSize="@dimen/text_medium" />
 
-                    <!--android:id="@+id/createdField"-->
-                    <!--android:layout_width="@dimen/dp144"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginLeft="@dimen/dp4"-->
-                    <!--android:focusable="false"-->
-                    <!--android:gravity="center_vertical"-->
-
-                    <!--android:textSize="@dimen/text_medium" />-->
-
-            <!--</TableRow>-->
-
-            <!--<TableRow-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="@dimen/dp48"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:visibility="invisible">-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginRight="@dimen/dp4"-->
-                    <!--android:gravity="center_vertical|right"-->
-                    <!--android:paddingRight="@dimen/dp4"-->
-                    <!--android:text="@string/ownerId_field_prompt"-->
-                    <!--android:textSize="@dimen/text_medium" />-->
-
-                <!--<EditText-->
-
-                    <!--android:id="@+id/ownerIdField"-->
-                    <!--android:layout_width="@dimen/dp144"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginLeft="@dimen/dp4"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:inputType="text"-->
-
-                    <!--android:textSize="@dimen/text_medium" />-->
-
-            <!--</TableRow>-->
-
-            <!--<TableRow-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="@dimen/dp48"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:visibility="invisible">-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginRight="@dimen/dp4"-->
-                    <!--android:gravity="center_vertical|right"-->
-                    <!--android:paddingRight="@dimen/dp4"-->
-                    <!--android:text="@string/objectId_field_prompt"-->
-                    <!--android:textSize="@dimen/text_medium" />-->
-
-                <!--<EditText-->
-
-                    <!--android:id="@+id/objectIdField"-->
-                    <!--android:layout_width="@dimen/dp144"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginLeft="@dimen/dp4"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:textSize="@dimen/text_medium"-->
-
-                    <!--/>-->
-
-            <!--</TableRow>-->
-
-            <!--<TableRow-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="@dimen/dp48"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:visibility="invisible">-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginRight="@dimen/dp4"-->
-                    <!--android:gravity="center_vertical|right"-->
-                    <!--android:paddingRight="@dimen/dp4"-->
-                    <!--android:text="@string/updated_field_prompt"-->
-                    <!--android:textSize="@dimen/text_medium" />-->
-
-                <!--<EditText-->
-
-                    <!--android:id="@+id/updatedField"-->
-                    <!--android:layout_width="@dimen/dp144"-->
-                    <!--android:layout_height="@dimen/dp48"-->
-                    <!--android:layout_marginLeft="@dimen/dp4"-->
-                    <!--android:focusable="false"-->
-                    <!--android:gravity="center_vertical"-->
-
-                    <!--android:textSize="@dimen/text_medium" />-->
-
-            <!--</TableRow>-->
-
-        <!--</TableLayout>-->
+        </TableRow>
 
         <Button
-                android:layout_width="180dp"
-                android:layout_height="@dimen/dp48"
-                android:text="@string/register_text"
-                android:id="@+id/registerButton"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp4"
-                android:textSize="@dimen/text_medium"
-                android:height="@dimen/dp40"/>
+            android:id="@+id/registerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp48"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp4"
+            android:height="@dimen/dp40"
+            android:text="@string/reg_button"
+            android:textSize="@dimen/text_medium" />
     </LinearLayout>
 </ScrollView>

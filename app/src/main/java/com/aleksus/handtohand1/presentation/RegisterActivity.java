@@ -20,12 +20,14 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText passwordField;
     private EditText nameField;
     private EditText emailField;
+    private EditText phoneField;
 
     private Button registerButton;
 
     private String password;
     private String name;
     private String email;
+    private String phone;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         passwordField = (EditText) findViewById(R.id.passwordField);
         nameField = (EditText) findViewById(R.id.nameField);
         emailField = (EditText) findViewById(R.id.emailField);
+        phoneField = (EditText) findViewById(R.id.phoneField);
         registerButton = (Button) findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,14 +54,20 @@ public class RegisterActivity extends AppCompatActivity {
         String passwordText = passwordField.getText().toString().trim();
         String nameText = nameField.getText().toString().trim();
         String emailText = emailField.getText().toString().trim();
+        String phoneText = phoneField.getText().toString().trim();
 
-        if (passwordText.isEmpty()) {
-            showToast("Поле 'Пароль' не может быть пустым.");
+        if (nameText.isEmpty()) {
+            showToast("Поле 'Логин' не может быть пустым.");
             return;
         }
 
         if (emailText.isEmpty()) {
-            showToast("Поле 'Логин (EMail)' не может быть пустым.");
+            showToast("Поле 'EMail' не может быть пустым.");
+            return;
+        }
+
+        if (passwordText.isEmpty()) {
+            showToast("Поле 'Пароль' не может быть пустым.");
             return;
         }
 
@@ -74,6 +83,11 @@ public class RegisterActivity extends AppCompatActivity {
             email = emailText;
         }
 
+        if (!phoneText.isEmpty()) {
+            phone = phoneText;
+//                    Integer.parseInt(phoneText);
+        }
+
         ExampleUser user = new ExampleUser();
 
         if (password != null) {
@@ -86,6 +100,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (email != null) {
             user.setEmail(email);
+        }
+
+        if (phone != null) {
+            user.setProperty( "phone", phone );
         }
 
         Backendless.UserService.register(user, new DefaultCallback<BackendlessUser>(RegisterActivity.this) {

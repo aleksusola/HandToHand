@@ -31,6 +31,8 @@
     <string name="updated_field_prompt">Updated:</string>
                                         
     <string name="email_field_prompt">Email:</string>
+
+    <string name="phone_field_prompt">Телефон: +7</string>
                                         
     <string name="default_registered_text">Вы успешно зарегестрированы!</string>
                                         
@@ -38,5 +40,6 @@
     <string name="action_settings">Настройки</string>
     <string name="action_about">О программе</string>
     <string name="action_exit">Выйти</string>
+    <string name="reg_button">Зарегистрироваться</string>
 
 </resources>
