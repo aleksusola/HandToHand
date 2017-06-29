@@ -41,5 +41,7 @@
     <string name="action_about">О программе</string>
     <string name="action_exit">Выйти</string>
     <string name="reg_button">Зарегистрироваться</string>
+    <string name="item_delete">Скрыть</string>
+    <string name="item_connect">Откликнуться</string>
 
 </resources>
