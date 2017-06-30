@@ -4,11 +4,13 @@ public class RecyclerItem {
 
     private String title;
     private String description;
+    private String collection;
     private String price;
 
-    public RecyclerItem(String title, String description, String price) {
+    public RecyclerItem(String title, String description,String collection, String price) {
         this.title = title;
         this.description = description;
+        this.collection = collection;
         this.price = price;
     }
 
@@ -24,6 +26,14 @@ public class RecyclerItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCollection() {
+        return collection;
+    }
+
+    public void setCollection(String collection) {
+        this.collection = collection;
     }
 
     public String getPrice() {

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     android:saveEnabled="false"
-    android:touchscreenBlocksFocus="false">
+    android:touchscreenBlocksFocus="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".presentation.ProfileActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:id="@+id/container">
 
 
     <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
@@ -80,4 +85,4 @@
         android:id="@+id/recyclerView">
     </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+</FrameLayout>

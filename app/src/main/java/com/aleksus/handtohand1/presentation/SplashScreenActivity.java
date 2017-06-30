@@ -23,62 +23,44 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         Backendless.setUrl( Defaults.SERVER_URL );
         Backendless.initApp( getApplicationContext(), Defaults.APPLICATION_ID, Defaults.API_KEY );
+
         LinearLayout linearAnim = (LinearLayout) findViewById(R.id.linearAnim);
         Animation anim = AnimationUtils.loadAnimation(SplashScreenActivity.this, R.anim.combo);
         linearAnim.startAnimation(anim);
-        Backendless.UserService.isValidLogin( new DefaultCallback<Boolean>( this ) {
+        Thread thread = new Thread() {
             @Override
-            public void handleResponse( Boolean isValidLogin ) {
-                if( isValidLogin && Backendless.UserService.CurrentUser() == null ) {
-                    String currentUserId = Backendless.UserService.loggedInUser();
+            public void run() {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(2000);
+                    Backendless.UserService.isValidLogin( new DefaultCallback<Boolean>( SplashScreenActivity.this ) {
+                        @Override
+                        public void handleResponse( Boolean isValidLogin ) {
+                            if( isValidLogin && Backendless.UserService.CurrentUser() == null ) {
+                                String currentUserId = Backendless.UserService.loggedInUser();
+                                if( !currentUserId.equals( "" ) ) {
+                                    Backendless.UserService.findById( currentUserId, new DefaultCallback<BackendlessUser>( SplashScreenActivity.this, "Заходим..." ) {
+                                        @Override
+                                        public void handleResponse( BackendlessUser currentUser ) {
 
-                    if( !currentUserId.equals( "" ) ) {
-
-                        Backendless.UserService.findById( currentUserId, new DefaultCallback<BackendlessUser>( SplashScreenActivity.this, "Заходим..." ) {
-
-                            @Override
-                            public void handleResponse( BackendlessUser currentUser ) {
-
-                                super.handleResponse( currentUser );
-                                Backendless.UserService.setCurrentUser( currentUser );
-                                Thread thread = new Thread() {
-                                    @Override
-                                    public void run() {
-                                        try {
-                                            TimeUnit.MILLISECONDS.sleep(3000);
+                                            super.handleResponse( currentUser );
+                                            Backendless.UserService.setCurrentUser( currentUser );
                                             startActivity( new Intent( getBaseContext(), ProfileActivity.class ) );
                                             finish();
-                                        } catch (InterruptedException e) {
-                                            e.printStackTrace();
                                         }
-                                    }
-                                };
-                                thread.start();
+                                    } );
+                                }
+                            } else {
+                                startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+                                finish();
                             }
-                        } );
-                    }
-
+                            super.handleResponse( isValidLogin );
+                        }
+                    });
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-
-                super.handleResponse( isValidLogin );
             }
-        });
-//        LinearLayout linearAnim = (LinearLayout) findViewById(R.id.linearAnim);
-//        Animation anim = AnimationUtils.loadAnimation(SplashScreenActivity.this, R.anim.combo);
-//        linearAnim.startAnimation(anim);
-//        Thread thread = new Thread() {
-//            @Override
-//            public void run() {
-//                try {
-//                    TimeUnit.MILLISECONDS.sleep(3000);
-//                    startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
-//                    finish();
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        };
-//
-//        thread.start();
+        };
+        thread.start();
     }
 }

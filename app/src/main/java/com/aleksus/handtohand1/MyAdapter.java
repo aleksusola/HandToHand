@@ -24,7 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_view, parent, false);
         return new ViewHolder(v);
     }
 
@@ -34,7 +34,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         final RecyclerItem itemList = listItems.get(position);
         holder.txtTitle.setText(itemList.getTitle());
         holder.txtDescription.setText(itemList.getDescription());
+        holder.txtCollection.setText(itemList.getCollection());
         holder.txtPrice.setText(itemList.getPrice());
+
 
         holder.txtOptionDigit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 //Display option menu
 
                 PopupMenu popupMenu = new PopupMenu(mContext, holder.txtOptionDigit);
-                popupMenu.inflate(R.menu.option_menu);
+                popupMenu.inflate(R.menu.menu_option);
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
@@ -77,12 +79,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public TextView txtTitle;
         public TextView txtDescription;
+        public TextView txtCollection;
         public TextView txtPrice;
         public TextView txtOptionDigit;
         public ViewHolder(View itemView) {
             super(itemView);
             txtTitle = (TextView) itemView.findViewById(R.id.txtTitle);
             txtDescription = (TextView) itemView.findViewById(R.id.txtDescription);
+            txtCollection = (TextView) itemView.findViewById(R.id.txtCollection);
             txtPrice = (TextView) itemView.findViewById(R.id.txtPrice);
             txtOptionDigit = (TextView) itemView.findViewById(R.id.txtOptionDigit);
         }
